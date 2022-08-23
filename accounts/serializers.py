@@ -1,6 +1,6 @@
 
 from rest_framework import serializers
-from .models import assistance,Rol
+from .models import assistance,Rol,assistencia
 from  users.serializers import UserAssistanceSerializer
 
 class rolSerializer(serializers.ModelSerializer):
@@ -14,3 +14,8 @@ class assistanceSerializer(serializers.ModelSerializer):
     class Meta:
         model = assistance
         fields = "__all__"
+
+class asistenciaList(serializers.ModelSerializer):
+    class Meta:
+      model = assistencia
+      fields = '__all__'

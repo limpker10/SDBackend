@@ -4,5 +4,5 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
    
-    path("api/messages/<room_name>/", MessagesListView.as_view()),
+    path("messages/<room_name>/", MessagesListView.as_view()),
 ]

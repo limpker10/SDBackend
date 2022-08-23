@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   #customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers thead th {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+  font-size: 12px;
+}
+    </style>
+<body>
+    <h2>Tarjeta de Asistencias</h2>
+    <h3><pre>Numero de Asistencias: {{ count }}      Dia: {{ empleado.date }}</pre></h3>
+    <table id="customers">
+        <thead>
+            <th>DNI</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Trabajo</th>
+            <th>Rol</th>
+            <th>status</th>
+        </thead>
+        <tbody>
+            {% for empleado in empleados %}
+                <tr>
+                    <td>{{ empleado.assistance_dni }}</td>
+                    <td>{{ empleado.name }}</td>
+                    <td>{{ empleado.last_name }}</td>
+                    <td>{{ empleado.rol_name }}</td>
+                    <td>{{ empleado.assistance }}</td>
+                    <td>{{ empleado.status }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
